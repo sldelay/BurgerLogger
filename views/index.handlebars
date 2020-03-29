@@ -1,21 +1,42 @@
-<h1>Burgers!</h1>
-
-<h2>Uneaten</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if !devoured}}
-      {{> burgers/burger-block }}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Eaten</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if devoured}}
-      {{> burgers/devoured-block }}
-    {{/if}}
-  {{/each}}
-</ul>
+<div class="row">
+    <div class="col s12 m6 center-align">
+        <div class="row">
+            <h2>Burgers To Try</h2>
+            {{#each data}}
+            <ul>
+                {{#unless devoured}}
+                <li>{{burger_name}}
+                    <a class="waves-effect waves-light btn devourBtn" id="devour" data-id="{{id}}">Devour</a>
+                </li>
+                
+                {{/unless}}
+            </ul>
+            {{else}}
+            <p>No burgers</p>
+            {{/each}}
+        </div>
+    </div>
+    <div class="col s12 m6 center-align">
+        <div class="row">
+            <h2>Devoured</h2>
+            {{#each data}}
+            <ul>
+                {{#if devoured}}
+                <li>{{burger_name}}</li>
+                {{/if}}
+            </ul>
+            {{else}}
+            <p>No burgers</p>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s6">
+        <form class="newBurger">
+            <label class="active" for="burgerName">Burger Name</label>
+            <input placeholder="Burger Name" id="burgerName" type="text" class="validate">
+            <button class="btn waves-effect waves-light submitBtn" type="submit" name="action">Submit</button>
+        </form>
+    </div>
+</div>
