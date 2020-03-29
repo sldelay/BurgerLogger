@@ -2,6 +2,10 @@ $(function() {
     $(".newBurger").on("submit", function(event) {
       event.preventDefault();
 
+      if (!$("#burgerName").val().trim()) {
+        return
+      }
+
       let newBurger = {
         burger: $("#burgerName").val().trim()
       }
