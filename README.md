@@ -3,7 +3,7 @@ UNH Bootcamp Week 13 HW
 
 ![alt text](screenshot.png)
 
-Link to live website: (https://frozen-retreat-23530.herokuapp.com/)
+Link to the live website: (https://frozen-retreat-23530.herokuapp.com/)
 
 ## Instructions
 
