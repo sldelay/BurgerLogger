@@ -17,7 +17,6 @@ $(function() {
 
     $(document).on("click", "#devour", function() {
         let id = $(this).attr('data-id');
-        console.log(id)
 
         let justEaten = {
           devoured: true
@@ -32,6 +31,18 @@ $(function() {
             window.location.href = "/";
           });
 
+    })
+
+    $(document).on("click", "#delete", function() {
+      let id = $(this).attr('data-id');
+
+      $.ajax({
+        method: "DELETE",
+        url: `/api/burger/${id}`
+      })
+        .then(function() {
+          window.location.href = "/";
+        });
     })
 });
 

@@ -35,6 +35,17 @@ router.put("/api/burger/:id", function (req, res) {
       });
 })
 
+router.delete("/api/burger/:id", function (req, res) {
+    db.Burger.destroy(
+        {
+          where: {
+            id: req.params.id
+          }
+        }).then(function(data) {
+        res.json(data);
+      });
+})
+
 
 
 module.exports = router;

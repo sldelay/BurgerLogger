@@ -22,7 +22,9 @@
             {{#each data}}
             <ul>
                 {{#if devoured}}
-                <li>{{burger_name}}</li>
+                <li>{{burger_name}}
+                    <a class="waves-effect waves-light btn devourBtn" id="delete" data-id="{{id}}">Delete</a>
+                </li>
                 {{/if}}
             </ul>
             {{else}}
